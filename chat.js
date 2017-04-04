@@ -37,8 +37,20 @@ io.sockets.on('connection', (socket)=>{
 	
 	//I'm adding the new message recived from my socket 
 	socket.on('send message', function(data){
-		console.log(data);
+		//console.log(data);
 		io.sockets.emit('new message', {msg: data});
 	});
 	
+	//new user
+	socket.on('new username', function(data, callback){
+		//console.log(data);
+		callback(true);
+		socket.username  = data;
+		users.push(socket.username);
+		updateUsers();
+	});
+
+	function updateUsers(){
+		io.sockets.emit('update users', users);
+	}
 });

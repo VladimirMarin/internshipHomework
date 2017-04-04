@@ -15,11 +15,14 @@
 
 
 		<div id = "container">
-			<div id = "namesWrapper">
+
+
+
+			<div id = "loginContainer">
 				<h2>My Chat App</h2>
 				<p>Create Username:</p>
 				<form id = "UsernameForm">
-					<input size = "35" id = "username" placeholder="">
+					<input size = "35" id = "username" placeholder="Enter you username">
 					<input type="submit" value="submit">
 				</form>
 			</div>
@@ -31,10 +34,12 @@
 
 
 				<div id='chatWrapper'>
-					<h2>ChatIO</h2>
+
+
+					
 					<div id = "chatWindow">
 
-
+						<h2>ChatIO</h2>
 						<form id="messageForm">
 							<textarea id = "message" placeholder="Type something...">
 							</textarea>
@@ -42,8 +47,8 @@
 							<input type="submit" value="Send">
 						</form>
 
-
 					</div>
+
 				</div>
 
 				
@@ -53,16 +58,23 @@
 
 				<div id="userWrapper">
 					<label>Online users:</label>
-					<div id="users"></div>
+					<ul id="userList"></ul>
 				</div>
 			</div>
-		</div>
+
+			
+	</div>
+
+
+
 		<script type="text/javascript">
 			$(function(){
 				var socket = io.connect();
 				var $messageForm = $('#messageForm');
 				var $message = $('#message');
 				var $chat = $('#chatWindow');
+				var $UsernameForm = $('#UsernameForm');
+				var $username = $('#username');
 
 
 				//it sends data from textarea 
@@ -78,7 +90,28 @@
 					$chat.append('<div>'+data.msg+'</div>');
 				});
 
+				$UsernameForm.submit(function(e){
+					e.preventDefault();
+					//console.log($username.val());
+					socket.emit('new username', $username.val(), function(data){
+						if(data){
+							$('#loginContainer').hide();
+							$('#mainChatWrapper').show();
+							$('#mainChatWrapper').css("display" , "inline")
 
+						}
+					});
+					$username.val("");
+				});
+
+				socket.on('update users', function(data){
+					var userList = '';
+					for( i = 0 ; i < data.length; i++){
+						userList += '<li>'+data[i]+'</li>';
+						console.log(data[i]);
+					} 
+					$('#userList').html(userList);
+				});
 
 			});
 
