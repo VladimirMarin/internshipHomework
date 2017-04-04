@@ -30,6 +30,9 @@ io.sockets.on('connection', (socket)=>{
 
 	//I'm removing the user from the array when he's disconnected
 	socket.on('disconnect' , (data)=>{
+		
+		users.splice(users.indexOf(socket.username), 1);
+		updateUsers();
 
 		connections.splice(connections.indexOf(socket), 1);
 		console.log(`One user disconnected. Connected: ${connections.length} users.`);
