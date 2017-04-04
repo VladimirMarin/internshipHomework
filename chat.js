@@ -12,8 +12,6 @@ console.log('server running.');
 
 //link my CSS files
 app.use(express.static(__dirname + '/styles'));
-//app.use(express.static(__dirname+'/styles'));  
-
 
 //create route
 app.get('/', (req, res)=>{
@@ -30,7 +28,7 @@ io.sockets.on('connection', (socket)=>{
 
 	//I'm removing the user from the array when he's disconnected
 	socket.on('disconnect' , (data)=>{
-		
+
 		users.splice(users.indexOf(socket.username), 1);
 		updateUsers();
 
@@ -41,7 +39,7 @@ io.sockets.on('connection', (socket)=>{
 	//I'm adding the new message recived from my socket 
 	socket.on('send message', function(data){
 		//console.log(data);
-		io.sockets.emit('new message', {msg: data});
+		io.sockets.emit('new message', {msg: data, user: socket.username});
 	});
 	
 	//new user

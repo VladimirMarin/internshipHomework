@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<title>MyChatIO</title>
 		<link rel="stylesheet" type="text/css" href="./style1.css">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
 		
@@ -22,8 +23,8 @@
 				<h2>My Chat App</h2>
 				<p>Create Username:</p>
 				<form id = "UsernameForm">
-					<input size = "35" id = "username" placeholder="Enter you username">
-					<input type="submit" value="submit">
+					<input size = "35" id = "username" placeholder="Enter you username" class="form-control">
+					<input class="btn btn-sm btn-primary btn-block" type="submit" value="submit">
 				</form>
 			</div>
 			
@@ -33,18 +34,17 @@
 
 
 
-				<div id='chatWrapper'>
+				<div id='chatWrapper' >
 
 
 					
-					<div id = "chatWindow">
+					<div id = "chatWindow" class="col-md-4">
 
-						<h2>ChatIO</h2>
-						<form id="messageForm">
-							<textarea id = "message" placeholder="Type something...">
+						<h2  >ChatIO</h2>
+						<form id="messageForm"  >
+							<textarea size="50" id = "message" placeholder="Type something...">
 							</textarea>
-							<br/>
-							<input type="submit" value="Send">
+							<input type="submit" value="Send" style="margin-top: 3px; margin-bottom: 3px;">
 						</form>
 
 					</div>
@@ -56,11 +56,11 @@
 
 
 
-				<div id="userWrapper">
+				<div id="userWrapper" style="opacity: 0.8;">
 					<label>Online users:</label>
 					<ul id="userList"></ul>
 				</div>
-			</div>
+		</div>
 
 			
 	</div>
@@ -87,7 +87,7 @@
 
 				//it adds message
 				socket.on('new message', function(data){
-					$chat.append('<div>'+data.msg+'</div>');
+					$chat.append('<div class="well"><strong>'+data.user+'</strong>:<br/>'+data.msg+'</div>');
 				});
 
 				$UsernameForm.submit(function(e){
@@ -113,6 +113,16 @@
 					$('#userList').html(userList);
 				});
 
+
+				//$(".well").css('margin-top', '5px');
+				
+				$('#loginContainer' ).hover(function(){
+    				
+    				$(this).css('opacity','0.9');
+    			},function(){
+        			
+        			$(this).css('opacity', '0.6');
+    			});
 			});
 
 		</script>

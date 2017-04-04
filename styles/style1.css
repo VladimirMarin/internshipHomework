@@ -1,10 +1,22 @@
 body{
+	background: url("clouds.jpg");
 	background-color: #f9f9f9;
+}
+
+h2{
+	margin-bottom: 0px;
+	height: 50px;
+	background-color: rgba(245, 245, 245, 0.6);
+	border-radius: 1px;
 }
 
 #container{
 	width: 700px;
+	height: 700px;
 	margin: 0 auto;
+	position: absolute;
+    left: 40%;
+    top: 30%;
 }
 
 #chatWindow{
@@ -13,14 +25,16 @@ body{
 
 #mainChatWrapper{
 	display: none;
+	width: 80%;
 	
 }
+
 textarea{
-	width: 200px;
+	margin-left: 1px ;
 	display:block;
 	width:100%;
 	height:34px;
-	padding:6px 12px;
+	
 	font-size:14px;
 	line-height:1.42857143;
 	color:#555;
@@ -34,24 +48,35 @@ textarea{
 	-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 	transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s
 }
+input[placeholder="Enter you username"]{
+	margin-bottom: 10px;
+}
 input[type="submit"]{
 	cursor: pointer;
-	border: 1px rgb(12, 12, 95) solid; 
+	 border:1px solid #ccc; 
 	border-radius: 5px;
 	height: 35px;
+	background-color: #ABCDEF;
 }
+
 
 h2{
 	margin-top: 10px;
 }
 
-#chatWrapper{
+/#chatWrapper{
+	/*font: 95% Arial, Helvetica, sans-serif;
+    max-width: 70%;
+    //margin: 20px auto;
+    padding: 16px;
+    background: #F7F7F7;
 	float: left;
 	border:1px #ccc solid;
 	border-radius: 10px;
 	background:#f4f4f4;
 	padding: 10px;
-
+	*/
+	margin-top: 10px;
 }
 
 #userWrapper{
@@ -66,7 +91,9 @@ h2{
 }
 
 #loginContainer{
+	
 	float: left;
+	opacity: 0.6;
 	border-radius: 10px;
 	border:1px #ccc solid;
 	background:#f4f4f4;
@@ -74,6 +101,10 @@ h2{
 	margin-left: 20px;
 	
 }
+
+.loginContainerHover{
+	opacity: 0.1;
+};
 
 input{
 	height: 30px;
