@@ -3,9 +3,17 @@
 	<head>
 		<meta charset="utf-8">
 		<title>MyChatIO</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="./style1.css">
+		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+		
 	</head>
 	<body>
+
+
+
+
+
 		<div id = "container">
 			<div id = "namesWrapper">
 				<h2>My Chat App</h2>
@@ -15,21 +23,65 @@
 					<input type="submit" value="submit">
 				</form>
 			</div>
-			<div id = "mainWrapper">
+			
+
+
+			<div id = "mainChatWrapper">
+
+
+
 				<div id='chatWrapper'>
 					<h2>ChatIO</h2>
 					<div id = "chatWindow">
+
+
 						<form id="messageForm">
-							<input size = "35" id = "username" placeholder="Type something...">
+							<textarea id = "message" placeholder="Type something...">
+							</textarea>
+							<br/>
 							<input type="submit" value="Send">
 						</form>
+
+
 					</div>
 				</div>
+
+				
+
+
+
+
 				<div id="userWrapper">
-					<divi id="users"></div>
-						
+					<label>Online users:</label>
+					<div id="users"></div>
 				</div>
 			</div>
 		</div>
+		<script type="text/javascript">
+			$(function(){
+				var socket = io.connect();
+				var $messageForm = $('#messageForm');
+				var $message = $('#message');
+				var $chat = $('#chatWindow');
+
+
+				//it sends data from textarea 
+				$messageForm.submit(function(e){
+					e.preventDefault();
+					//console.log($message.val());
+					socket.emit('send message', $message.val());
+					$message.val("");
+				});
+
+				//it adds message
+				socket.on('new message', function(data){
+					$chat.append('<div>'+data.msg+'</div>');
+				});
+
+
+
+			});
+
+		</script>
 	</body>
 </html>
