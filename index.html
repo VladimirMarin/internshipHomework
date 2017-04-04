@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>MyChatIO</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
 		<div id = "container">
@@ -10,23 +11,23 @@
 				<h2>My Chat App</h2>
 				<p>Create Username:</p>
 				<form id = "UsernameForm">
-					<input size = "35" id = "username">
+					<input size = "35" id = "username" placeholder="">
 					<input type="submit" value="submit">
 				</form>
 			</div>
-			<div id = "mainwrapper">
-				<h2>ChatIO</h2>
+			<div id = "mainWrapper">
 				<div id='chatWrapper'>
+					<h2>ChatIO</h2>
 					<div id = "chatWindow">
 						<form id="messageForm">
 							<input size = "35" id = "username" placeholder="Type something...">
 							<input type="submit" value="Send">
 						</form>
 					</div>
-					<div id="userWrapper">
-						<divi id="users"></div>
+				</div>
+				<div id="userWrapper">
+					<divi id="users"></div>
 						
-					</div>
 				</div>
 			</div>
 		</div>
