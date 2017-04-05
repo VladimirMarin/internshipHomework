@@ -3,14 +3,6 @@ body{
 	background-color: #f9f9f9;
 }
 
-/*h2{
-	margin-top: 10px;
-	margin-bottom: 0px;
-	height: 50px;
-	background-color: rgba(245, 245, 245, 0.6);
-	border-radius: 1px;
-}*/
-
 #toDoContainer{
 	display: none;
 }
@@ -30,36 +22,57 @@ body{
 }
 
 #mainChatWrapper{
+	padding: auto;
+	margin: 0 auto;
+	vertical-align: center;
 	display: none;
 	width: 80%;
 	
 }
 
+#changeToChat{
+	margin-top: 55px;
+	font-size: 10;
+	cursor: pointer;
+}
+
 textarea{
 	margin-left: 1px ;
 	display:block;
-	width:100%;
+	width:290px;
 	height:34px;
 	
 	font-size:14px;
-	line-height:1.42857143;
-	color:#555;
 	background-color:#fff;
-	background-image:none;
 	border:1px solid #ccc;
 	border-radius:4px;
-	-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);
-	box-shadow:inset 0 1px 1px rgba(0,0,0,.075);
-	-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-	-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-	transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s
 }
+
+input[value=send]{
+	float: left;
+	display: inline-block;
+	vertical-align: top;
+	width: 30%;
+	cursor: pointer;
+	background-color:#fc999b;
+	color:#ffffff;
+	border-radius: 5px;
+	text-align:center;
+
+}
+
 input[placeholder="Enter you username"]{
+	float: left;
+	vertical-align: top;
+	display: inline-block;
 	margin-bottom: 10px;
 	width: 60%;
 	margin-left: 10px;
 }
-input[type="submit"]{
+#UsernameForm input[value=submit]{
+	float: left;
+	display: inline-block;
+	vertical-align: top;
 	width: 30%;
 	cursor: pointer;
 	background-color:#fc999b;
@@ -74,15 +87,9 @@ input[type="submit"]{
 
 #chatWrapper{
 	font: 95% Arial, Helvetica, sans-serif;
-    max-width: 70%;
-    //margin: 20px auto;
-    padding: 16px;
-    background: #F7F7F7;
 	float: left;
 	border:1px #ccc solid;
 	border-radius: 10px;
-	background:#f4f4f4;
-	padding: 10px;
 	
 }
 
@@ -90,11 +97,9 @@ input[type="submit"]{
 	float: left;
 	border:1px #ccc solid;
 	border-radius: 10px;
-	background:#f4f4f4;
-	padding: 10px;
 	margin-left: 20px;
 	width: 150px;
-	max-height: 200px;
+	
 }
 
 #loginContainer{

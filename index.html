@@ -46,6 +46,8 @@
 		<br/>
 		<ul  id="tasksUL"></ul>
 		<div id ="clearButton" class="button">Clear list</div>
+		<br/>
+		<label id='changeToChat'>Change to chat</label>
 	</div>
 
 
@@ -58,7 +60,6 @@
 				<p class="title">My Chat App</p>
 				<p style="margin-left: 10px; color: white;">Create Username:</p>
 				<form id = "UsernameForm">
-
 					<input id = "username" placeholder="Enter you username">
 					<input type="submit" value="submit">
 				</form>
@@ -77,10 +78,10 @@
 					<div id = "chatWindow">
 
 						<h2>My Chat</h2>
-						<form id="messageForm"  >
+						<form id="messageForm" >
 							<textarea size="50" id = "message" placeholder="Type something...">
 							</textarea>
-							<input type="submit" value="Send" style="margin-top: 3px; margin-bottom: 3px;">
+							<input type="submit" value="Send"	class="button" >
 						</form>
 
 					</div>
@@ -92,7 +93,7 @@
 
 
 
-				<div id="userWrapper" >
+				<div id="userWrapper" class="container" >
 					<label>Online users:</label>
 					<ul id="userList"></ul>
 				</div>

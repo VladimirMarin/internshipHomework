@@ -21,7 +21,7 @@ $(document).ready(function(){
 
 	//it adds message
 	socket.on('new message', function(data){
-		$chat.append('<div class="well"><strong>'+data.user+'</strong>:<br/>'+data.msg+'</div>');
+		$chat.append('<br/><div class="well"><strong>'+data.user+'</strong>:<br/>'+data.msg+'</div>');
 	});
 
 	$UsernameForm.submit(function(e){
