@@ -56,22 +56,20 @@ textarea{
 }
 input[placeholder="Enter you username"]{
 	margin-bottom: 10px;
-	width: 40%;
+	width: 60%;
+	margin-left: 10px;
 }
 input[type="submit"]{
-	display: inline-block;
+	width: 30%;
+	cursor: pointer;
 	background-color:#fc999b;
 	color:#ffffff;
 	border-radius: 5px;
 	text-align:center;
-	margin-top:2px;
-	padding: 5px 15px;
+	
 }
 
-.button:hover{
-cursor: pointer;
-opacity: .8;
-}
+
 
 
 #chatWrapper{

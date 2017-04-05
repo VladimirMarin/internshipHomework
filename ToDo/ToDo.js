@@ -28,7 +28,7 @@ $(document).ready(function(){
     	$(this).parent().toggleClass('strike').fadeOut('slow'); 
      });
 
-     $('input').focus(function(){
+     $('input[name=ListItem]').focus(function(){
     	$(this).val('');
     });
     

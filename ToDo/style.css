@@ -5,7 +5,7 @@ font: normal normal 13px/16px "Open Sans", sans-serif;
 
 .title{
 	font-size-adjust: 1;
-	font-color: "white"; 
+	color: white; 
 	margin-left: 10px;
 }
 
@@ -51,13 +51,13 @@ padding: 4px 15px 4px 5px;
 
 
 .button{
-display: inline-block;
-background-color:#fc999b;
-color:#ffffff;
-border-radius: 5px;
-text-align:center;
-margin-top:2px;
-padding: 5px 15px;
+	display: inline-block;
+	background-color:#fc999b;
+	color:#ffffff;
+	border-radius: 5px;
+	text-align:center;
+	margin-top:2px;
+	padding: 5px 15px;
 }
 
 .button:hover{
