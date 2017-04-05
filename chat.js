@@ -10,8 +10,8 @@ connections=[];
 server.listen(28642);
 console.log('server running.');
 
-//link my CSS files
-app.use(express.static(__dirname + '/styles'));
+//link my files
+app.use(express.static(__dirname ));
 
 //create route
 app.get('/', (req, res)=>{

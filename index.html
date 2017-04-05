@@ -3,28 +3,63 @@
 	<head>
 		<meta charset="utf-8">
 		<title>MyChatIO</title>
-		<link rel="stylesheet" type="text/css" href="./style1.css">
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="./user/style1.css">
 		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-		
+		<script type="text/javascript" src="./user/userSide.js"></script>
+
+
+
+		<link href="./ToDo/jquery-ui/jquery-ui.css" rel="stylesheet">
+		<script src="./ToDo/jquery-ui/external/jquery/jquery.js"></script>
+		<script src="./ToDo/jquery-ui/jquery-ui.js"></script>
+		<script type="text/javascript" src="./ToDo.js"></script>
+		<script type="text/javascript" src="./ToDo/ToDo.js"></script>
+		<link rel="stylesheet" type="text/css" href="./ToDo/style.css">
+
+
+	
+
+
 	</head>
 	<body>
 
+	<div id="Home" class="container" >
+		<span id="inToDo" class="button">To Do App</span> 
+		<span id="inChat"   class="button" style="float: right;">Chat app</span> 
+	</div>
+
+
+
+	<div class="container" id="toDoContainer">
+		<h2>My To Do List</h2>
+		<p><em>Drag if you want to reorder.</em></p>
+		<p><em>Check if you want to delete the task.</em></p>
+		<p><em>Click on task if you want to edit it.</em></p>
+
+		<form name="toDoList">
+			<input type="text" name="ListItem"/>
+		</form>
+		
+		<div id="button" class="button">Add</div>
+		
+		<br/>
+		<ul  id="tasksUL"></ul>
+		<div id ="clearButton" class="button">Clear list</div>
+	</div>
 
 
 
 
-		<div id = "container">
 
-
+		<div id = "container" >
 
 			<div id = "loginContainer">
-				<h2>My Chat App</h2>
+				<p class="title">My Chat App</p>
 				<p>Create Username:</p>
 				<form id = "UsernameForm">
-					<input size = "35" id = "username" placeholder="Enter you username" class="form-control">
-					<input class="btn btn-sm btn-primary btn-block" type="submit" value="submit">
+					<input id = "username" placeholder="Enter you username">
+					<input class="button" type="submit" value="submit">
 				</form>
 			</div>
 			
@@ -34,13 +69,13 @@
 
 
 
-				<div id='chatWrapper' >
+				<div id='chatWrapper' class="container">
 
 
 					
-					<div id = "chatWindow" class="col-md-4">
+					<div id = "chatWindow">
 
-						<h2  >ChatIO</h2>
+						<h2>My Chat</h2>
 						<form id="messageForm"  >
 							<textarea size="50" id = "message" placeholder="Type something...">
 							</textarea>
@@ -56,75 +91,11 @@
 
 
 
-				<div id="userWrapper" style="opacity: 0.8;">
+				<div id="userWrapper" >
 					<label>Online users:</label>
 					<ul id="userList"></ul>
 				</div>
-		</div>
-
-			
+		</div>		
 	</div>
-
-
-
-		<script type="text/javascript">
-			$(function(){
-				var socket = io.connect();
-				var $messageForm = $('#messageForm');
-				var $message = $('#message');
-				var $chat = $('#chatWindow');
-				var $UsernameForm = $('#UsernameForm');
-				var $username = $('#username');
-
-
-				//it sends data from textarea 
-				$messageForm.submit(function(e){
-					e.preventDefault();
-					//console.log($message.val());
-					socket.emit('send message', $message.val());
-					$message.val("");
-				});
-
-				//it adds message
-				socket.on('new message', function(data){
-					$chat.append('<div class="well"><strong>'+data.user+'</strong>:<br/>'+data.msg+'</div>');
-				});
-
-				$UsernameForm.submit(function(e){
-					e.preventDefault();
-					//console.log($username.val());
-					socket.emit('new username', $username.val(), function(data){
-						if(data){
-							$('#loginContainer').hide();
-							$('#mainChatWrapper').show();
-							$('#mainChatWrapper').css("display" , "inline")
-
-						}
-					});
-					$username.val("");
-				});
-
-				socket.on('update users', function(data){
-					var userList = '';
-					for( i = 0 ; i < data.length; i++){
-						userList += '<li>'+data[i]+'</li>';
-						console.log(data[i]);
-					} 
-					$('#userList').html(userList);
-				});
-
-
-				//$(".well").css('margin-top', '5px');
-				
-				$('#loginContainer' ).hover(function(){
-    				
-    				$(this).css('opacity','0.9');
-    			},function(){
-        			
-        			$(this).css('opacity', '0.6');
-    			});
-			});
-
-		</script>
 	</body>
 </html>
