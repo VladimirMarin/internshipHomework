@@ -6,7 +6,7 @@ $(document).ready(function(){
 	var $chat = $('#chatWindow');
 	var $UsernameForm = $('#UsernameForm');
 	var $username = $('#username');
-
+	
 
 
 	//Jquery 4 chat app
@@ -21,7 +21,7 @@ $(document).ready(function(){
 
 	//it adds message
 	socket.on('new message', function(data){
-		$chat.append('<br/><div class="well"><strong>'+data.user+'</strong>:<br/>'+data.msg+'</div>');
+		$('#messages').append('<br/><li><div class="well"><strong>'+data.user+'</strong>:<br/>'+data.msg+'</div></li>');
 	});
 
 	$UsernameForm.submit(function(e){

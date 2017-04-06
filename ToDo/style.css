@@ -81,3 +81,13 @@ li:hover{
   cursor: pointer;
 
  }
+
+#messages {padding-left: 10px;
+	}
+
+#messages li {padding: 5px;color:#000;
+		list-style-type: none;
+		margin-top: 3px;
+	}
+
+#messages li:nth-child(even){background: #dfdfdf;}
