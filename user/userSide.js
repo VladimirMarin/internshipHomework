@@ -34,7 +34,7 @@ $(document).ready(function(){
 		var $li = $($(this).parent());
 		var $p = $($li.find('p'));
 		var $form= $($li.find('form'));
-		console.log($p.text());
+		//console.log($p.text());
 		
 
 		socket.emit('send task', $p.text());
@@ -67,7 +67,7 @@ $(document).ready(function(){
 			var userList = '';
 			for( i = 0 ; i < data.length; i++){
 				userList += '<li>'+data[i]+'</li>';
-				console.log(data[i]);
+				//console.log(data[i]);
 				} 
 				$('#userList').html(userList);
 		});
@@ -112,7 +112,7 @@ $(document).ready(function(){
 
 			var taskList = [];
 			socket.emit('get tasks', function(data){
-					console.log(data);
+					//console.log(data);
 					for( i = 0 ; i < data.length ; i++){
 
 						$('#tasksUL').append('<li><input type="checkbox"/><span>' + data[i] +'</span></li>');

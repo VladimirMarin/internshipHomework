@@ -1,5 +1,4 @@
 $(document).ready(function(){
-	console.log('ceva');
 	
 	$('#button').click(function(){
 		var toAdd = $("input[name=ListItem]").val();
@@ -20,8 +19,6 @@ $(document).ready(function(){
 			$('#tasksUL').html("");
 		}
 		
-
-
 	});
 
 	$(document).on('click','input[type=checkbox]', function(){
@@ -34,11 +31,6 @@ $(document).ready(function(){
     
     $('#tasksUL').sortable();  
       
-   /* $(document).on('click', 'span', function(){
-    	var x = $(this).val();
-    	console.log(x);
-    });*/
-	
 	
 	$("input[name=ListItem]").keyup(function(e){
 		e.preventDefault();
@@ -49,5 +41,14 @@ $(document).ready(function(){
 		}
 	});
 	
-
+	$('#changeLogIn').click(function(){
+		$('#toDoContainer').hide();
+		$("#container").show();
+		$("#loginContainer").show();
+	});
+	$('#changeChat').click(function(){
+		$('#toDoContainer').hide();
+		$("#container").show();
+		$("#chatWindow").show();
+	});
 });

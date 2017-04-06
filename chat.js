@@ -41,13 +41,13 @@ io.sockets.on('connection', (socket)=>{
 		//console.log(data);
 		//console.log(socket.username);
 		socket.tasks.push(data);
-		console.log(socket.tasks.indexOf(data));
+		//console.log(socket.tasks.indexOf(data));
 
 
 	});
 
 	socket.on( 'get tasks', function(callback){
-		console.log("!!!!");
+		//console.log("!!!!");
 		callback(socket.tasks);
 		
 	});

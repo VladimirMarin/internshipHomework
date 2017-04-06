@@ -3,6 +3,20 @@ body{
 	background-color: #f9f9f9;
 }
 
+#Home{
+  	margin-top: 15%;
+  	background: rgba(80, 80, 80, .3);
+  	border:1px #ccc solid;
+
+
+}
+
+#Home:hover{
+  	background: rgba(90, 90, 90, .6);
+  	
+}
+
+
 #toDoContainer{
 	display: none;
 }
@@ -36,6 +50,120 @@ body{
 	cursor: pointer;
 }
 
+
+#UsernameForm input[value=submit]{
+	float: left;
+	display: inline-block;
+	vertical-align: top;
+	width: 30%;
+	cursor: pointer;
+	background-color:#fc999b;
+	color:#ffffff;
+	border-radius: 5px;
+	text-align:center;
+	
+}
+
+#chatWrapper{
+	font: 95% Arial, Helvetica, sans-serif;
+	float: left;
+	border:1px #ccc solid;
+	border-radius: 10px;
+	
+}
+
+#userWrapper{
+	float: left;
+	border:1px #ccc solid;
+	border-radius: 10px;
+	margin-left: 20px;
+	width: 150px;
+	
+}
+
+
+#loginContainer{
+	
+	width: 50%;
+	border:1px #ccc solid;
+	margin: 0 auto;
+	border-radius: 10px;
+	background: rgba(80, 80, 80, .3);
+	display: none;
+	
+}
+
+.loginContainerHover{
+	background: rgba(90, 90, 90, .6);
+};
+
+.title{
+	font-size: 10;
+	color: white; 
+	margin-left: 10px;
+}
+
+.container{
+
+	padding: 20px;
+	width: 300px;
+	margin: 0 auto;
+	margin-top: 40px;
+	background: rgba(500, 500, 500, .7);
+	border-radius: 5px;}
+
+.button{
+	display: inline-block;
+	background-color:#fc999b;
+	color:#ffffff;
+	border-radius: 5px;
+	text-align:center;
+	margin-top:2px;
+	padding: 5px 15px;
+}
+
+.button:hover{
+cursor: pointer;
+opacity: .8;
+}
+
+#tasksUL {padding-left: 20px;
+	}
+
+#tasksUL li {padding: 5px;color:#000;
+		list-style-type: none;
+		margin-top: 3px;
+	}
+
+#tasksUL li:nth-child(even){background: #dfdfdf;}
+
+.strike{text-decoration: line-through;}
+
+li:hover{
+  cursor: pointer;
+
+ }
+
+#messages {padding-left: 10px;
+	}
+
+#messages li {padding: 5px;color:#000;
+		list-style-type: none;
+		margin-top: 3px;
+	}
+
+#messages li:nth-child(even){background: #dfdfdf;}
+
+
+
+
+
+
+
+input{
+	height: 30px;
+}
+
 textarea{
 	margin-left: 1px ;
 	display:block;
@@ -61,62 +189,34 @@ input[value=send]{
 
 }
 
-input[placeholder="Enter you username"]{
-	float: left;
-	vertical-align: top;
-	display: inline-block;
-	margin-bottom: 10px;
-	width: 60%;
-	margin-left: 10px;
+
+body {
+font: normal normal 13px/16px "Open Sans", sans-serif;
+
 }
-#UsernameForm input[value=submit]{
-	float: left;
+
+
+
+
+h2{
+	background-color: rgba(500, 500, 500, .7);
+}
+
+
+form {
 	display: inline-block;
-	vertical-align: top;
-	width: 30%;
+}
+
+input[type="checkbox"]{
+	margin-right: 3px;
+	vertical-align: middle;
+	position: relative;
 	cursor: pointer;
-	background-color:#fc999b;
-	color:#ffffff;
-	border-radius: 5px;
-	text-align:center;
-	
 }
-
-
-
-
-#chatWrapper{
-	font: 95% Arial, Helvetica, sans-serif;
-	float: left;
-	border:1px #ccc solid;
-	border-radius: 10px;
-	
-}
-
-#userWrapper{
-	float: left;
-	border:1px #ccc solid;
-	border-radius: 10px;
-	margin-left: 20px;
-	width: 150px;
-	
-}
-
-#loginContainer{
-	
-	width: 50%;
-	border:1px #ccc solid;
-	margin: 0 auto;
-	border-radius: 10px;
-	background: rgba(80, 80, 80, .3);
-	display: none;
-	
-}
-
-.loginContainerHover{
-	background: rgba(90, 90, 90, .6);
-};
 
 input{
-	height: 30px;
+padding: 4px 15px 4px 5px;
 }
+
+
+
