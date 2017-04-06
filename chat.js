@@ -35,6 +35,28 @@ io.sockets.on('connection', (socket)=>{
 		connections.splice(connections.indexOf(socket), 1);
 		console.log(`One user disconnected. Connected: ${connections.length} users.`);
 	});
+
+
+	socket.on('send task', function(data){
+		//console.log(data);
+		//console.log(socket.username);
+		socket.tasks.push(data);
+		console.log(socket.tasks.indexOf(data));
+
+
+	});
+
+	socket.on( 'get tasks', function(callback){
+		console.log("!!!!");
+		callback(socket.tasks);
+		/*socket.emit('get tasks', function(){
+				console.log('task');
+
+		});*/
+
+	});
+	
+
 	
 	//I'm adding the new message recived from my socket 
 	socket.on('send message', function(data){
@@ -47,6 +69,7 @@ io.sockets.on('connection', (socket)=>{
 		//console.log(data);
 		callback(true);
 		socket.username  = data;
+		socket.tasks = [];
 		users.push(socket.username);
 		updateUsers();
 	});

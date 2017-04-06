@@ -21,8 +21,34 @@ $(document).ready(function(){
 
 	//it adds message
 	socket.on('new message', function(data){
-		$('#messages').append('<br/><li><div class="well"><strong>'+data.user+'</strong>:<br/>'+data.msg+'</div></li>');
+		$('#messages').append('<br/><li><input type="submit" value="Add" class="button"><span class="well"><strong>'+data.user+'</strong>:<p class="dataMSG">'+data.msg+'</p></span></li>');
 	});
+
+
+
+
+
+
+
+	$(document).on('click','input[value=Add]', function(e){
+		var $li = $($(this).parent());
+		var $p = $($li.find('p'));
+		var $form= $($li.find('form'));
+		console.log($p.text());
+		
+
+		socket.emit('send task', $p.text());
+
+     });
+
+
+
+
+
+
+
+
+
 
 	$UsernameForm.submit(function(e){
 		e.preventDefault();
@@ -80,6 +106,26 @@ $(document).ready(function(){
 
 		});
 
+		$('#openToDoLabel').click(function(){
+			$("#toDoContainer").show();
+			$('#mainChatWrapper').hide();
+
+			var taskList = [];
+			socket.emit('get tasks', function(data){
+					console.log(data);
+						/*
+						for( i = 0 ; i < data.length; i++){
+							userList += '<li>'+data[i]+'</li>';
+							console.log(data[i]);
+							} 
+							$('#userList').html(userList);*/
+			});
+
+
+		});
+
+		
+		
 
 
 
