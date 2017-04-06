@@ -49,11 +49,7 @@ io.sockets.on('connection', (socket)=>{
 	socket.on( 'get tasks', function(callback){
 		console.log("!!!!");
 		callback(socket.tasks);
-		/*socket.emit('get tasks', function(){
-				console.log('task');
-
-		});*/
-
+		
 	});
 	
 

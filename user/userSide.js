@@ -113,15 +113,14 @@ $(document).ready(function(){
 			var taskList = [];
 			socket.emit('get tasks', function(data){
 					console.log(data);
-						/*
-						for( i = 0 ; i < data.length; i++){
-							userList += '<li>'+data[i]+'</li>';
-							console.log(data[i]);
-							} 
-							$('#userList').html(userList);*/
+					for( i = 0 ; i < data.length ; i++){
+
+						$('#tasksUL').append('<li><input type="checkbox"/><span>' + data[i] +'</span></li>');
+		
+			
+					}
+
 			});
-
-
 		});
 
 		
