@@ -10,14 +10,21 @@ $(document).ready(function(){
 		$('li').toggleClass('strike').fadeOut(630);
 		
 		var y = new Date();
-		while(y.getMilliseconds()<631){
+		setTimeout(function(){
+  			$('#tasksUL').html("");
+		}, 631);
+
+
+
+
+		/*while(y.getMilliseconds()<631){
 			y = new Date();
 			//console.log(y.getMilliseconds());
 		}
 
 		if(y.getMilliseconds == 630){
 			$('#tasksUL').html("");
-		}
+		}*/
 		
 	});
 
