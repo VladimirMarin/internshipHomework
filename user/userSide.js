@@ -115,7 +115,7 @@ $(document).ready(function(){
 					//console.log(data);
 					for( i = 0 ; i < data.length ; i++){
 
-						$('#tasksUL').append('<li><input type="checkbox"/><span>' + data[i] +'</span></li>');
+						$('#tasksUL').append('<li><input type="checkbox"/><span class="spantask">' + data[i] +'</span></li>');
 		
 			
 					}

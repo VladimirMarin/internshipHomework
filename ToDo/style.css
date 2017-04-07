@@ -11,3 +11,7 @@ input[placeholder="Enter you username"]{
 	width: 60%;
 	margin-left: 10px;
 }
+
+label{
+	cursor: pointer;
+}

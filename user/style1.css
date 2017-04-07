@@ -32,15 +32,20 @@ body{
 }
 
 #chatWindow{
-	height: 300px;
+	min-height: 300px;
 }
 
 #mainChatWrapper{
 	padding: auto;
-	margin: 0 auto;
-	vertical-align: center;
 	display: none;
 	width: 80%;
+	position: absolute;
+  	
+ 	z-index: 15;
+  	top: 30%;
+  	left: 45%;
+  	margin: -100px 0 0 -150px;
+  	
 	
 }
 

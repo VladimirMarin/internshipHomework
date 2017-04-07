@@ -36,19 +36,32 @@ $(document).ready(function(){
 		e.preventDefault();
 		if(e.keyCode == 13){
 			var toAdd = $("input[name=ListItem]").val();
-			$('#tasksUL').append('<li><input type="checkbox"/><span>' + toAdd +'</span></li>');
+			$('#tasksUL').append('<li><input type="checkbox"/><span class = "spantask">' + toAdd +'</span></li>');
 			$("input[name=ListItem]").val("");	
 		}
 	});
 	
-	$('#changeLogIn').click(function(){
+	$('#changeChat').click(function(){
 		$('#toDoContainer').hide();
 		$("#container").show();
 		$("#loginContainer").show();
 	});
-	$('#changeChat').click(function(){
+
+	$('#changeLogIn').click(function(){
 		$('#toDoContainer').hide();
 		$("#container").show();
-		$("#chatWindow").show();
+		$("#mainChatWrapper").show();
 	});
+	
+
+	/*$(document).on('click' , '.spantask' , function(){
+		var taskText = $(this).text();
+		console.log("Shit happens");
+		//$(this).html('<input type="text"/>');
+		//var myInput = $(this).find('input');
+		//myInput.text() = taskText;
+
+	});*/
+
+
 });
